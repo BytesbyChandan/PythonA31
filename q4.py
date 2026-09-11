@@ -1,12 +1,11 @@
-class employee:
-    def __init__(self, salary):
-        self.__salary = salary
-    def set_salary(self, salary):
-        if salary >= 0:
-            self.__salary = salary + (salary * 0.1)
-    def get_salary(self):
-        return self.__salary
+def floo(x,y):
+    try:
+        div_value = x//y
+    except ZeroDivisionError:
+        print("Do not use zero")
+    else:
+        print(f"The final value is:{div_value}")
+    finally:
+        print("Floor Division Done.....!!!")
 
-e = employee(50000)
-e.set_salary(60000)
-print(e.get_salary())
+floo(5534546,34)

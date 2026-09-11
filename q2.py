@@ -1,16 +1,11 @@
-class bankAccount:
-    def __init__(self, balance):
-        self.__balance = balance
-    def deposit(self, amount):
-        self.__balance += amount
-    def withdraw(self, amount):
-        if amount <= self.__balance:
-            self.__balance -= amount
-        else:
-            print("Insufficient funds")
-    def get_balance(self):
-        return self.__balance
-account = bankAccount(1000)
-account.deposit(500)
-account.withdraw(200)
-print(account.get_balance())
+def conve(m):
+    try:
+        new_value = int(m)
+    except:
+        print("Enter any numerical value")
+    else:
+        print(f"The final value is: {new_value}")
+    finally:
+        print("The value is converted")  
+
+print(conve(45.78))
