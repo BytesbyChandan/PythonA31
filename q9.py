@@ -1,25 +1,16 @@
-class camera:
-    def __init__(self, brand, model):
+class Aappliances:
+    def __init__(self, brand, power):
         self.brand = brand
-        self.model = model
-
+        self.power = power
     def display(self):
-        print(f"Brand: {self.brand}, Model: {self.model}")
-class phone:
-    def __init__(self, brand, model):
-        self.brand = brand
-        self.model = model
-
+        print("Brand:", self.brand)
+        print("Power:", self.power)
+class washingmachine(Aappliances):
+    def __init__(self, capacity, brand, power):
+        super().__init__(brand, power)
+        self.capacity = capacity
     def display(self):
-        print(f"Brand: {self.brand}, Model: {self.model}")
-class smartphone(camera, phone):
-    def __init__(self, brand, model):
-        camera.__init__(self, brand, model)
-        phone.__init__(self, brand, model)
-
-    def display(self):
-        camera.display(self)
-        phone.display(self)
-
-smartphone1 = smartphone("Apple", "iPhone 13")
-smartphone1.display()
+        super().display()
+        print("Capacity:", self.capacity)
+w = washingmachine("7kg", "LG", 2000)
+w.display()

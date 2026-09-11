@@ -1,25 +1,16 @@
-class person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+class book:
+    def __init__(self,title, author):
+        self.title = title
+        self.author = author
     def display(self):
-        print(f"Name: {self.name}, Age: {self.age}")
-class employee:
-    def __init__(self, name, age, employee_id):
-        person.__init__(self, name, age)
-        self.employee_id = employee_id
+        print("Title:", self.title)
+        print("Author:", self.author)   
+class ebook(book):
+    def __init__(self, file_size, title, author):
+        super().__init__(title, author)
+        self.file_size = file_size
     def display(self):
-        person.display(self)
-        print(f"Employee ID: {self.employee_id}")
-class manager(person, employee):
-    def __init__(self, name, age, employee_id, department):
-        person.__init__(self, name, age)
-        employee.__init__(self, name, age, employee_id)
-        self.department = department
-    def display(self):
-        person.display(self)
-        employee.display(self)
-        print(f"Department: {self.department}")
-
-manager1 = manager("Alice", 35, "E123", "HR")
-manager1.display()
+        super().display()
+        print("File Size:", self.file_size, "MB")   
+e = ebook(5, "Python Programming", "John Doe")
+e.display()

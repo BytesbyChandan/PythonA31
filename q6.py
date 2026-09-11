@@ -1,15 +1,18 @@
-class vehicle:
-    def seating_capacity(self, capacity):
-        print(f"The seating capacity of a vehicle is {capacity} passengers")
+class account:
+    def __init__(self, account_number, balance):
+        self.account_number = account_number
+        self.balance = balance
 
-class bus(vehicle):
-    def seating_capacity(self, capacity=50):
-        print(f"The seating capacity of a bus is {capacity} passengers")
-class car(vehicle):
-    def seating_capacity(self, capacity=5):
-        print(f"The seating capacity of a car is {capacity} passengers")
+    def display(self):
+        print(f"Account Number: {self.account_number}, Balance: ${self.balance:.2f}")
 
-car1 = car()
-car1.seating_capacity()
-bus1 = bus()
-bus1.seating_capacity()    
+class savings_account(account):
+    def __init__(self, interest_rate, account_number, balance):
+        super().__init__(account_number, balance)
+        self.interest_rate = interest_rate
+
+    def display(self):
+        super().display()
+        print(f"Interest Rate: {self.interest_rate}%")
+s = savings_account(2.5, "123456789", 1000.00)
+s.display()

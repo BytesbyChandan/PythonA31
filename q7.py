@@ -1,24 +1,16 @@
-class A:
-    def __init__(self, value):
-        self.value = value
-
+class user:
+    def __init__(self,username, email):
+        self.username = username
+        self.email = email
     def display(self):
-        print(f"Value: {self.value}")
-class B:
-    def __init__(self, value):
-        self.value = value
-
+        print("Username:", self.username)
+        print("Email:", self.email)
+class admin(user):
+    def __init__(self, role, username, email):
+        super().__init__(username, email)
+        self.role = role
     def display(self):
-        print(f"Value: {self.value}")
-
-class C(A, B):
-    def __init__(self, value):
-        A.__init__(self, value)
-        B.__init__(self, value)
-
-    def display(self):
-        A.display(self)
-        B.display(self)
-
-c = C(10)
-c.display()
+        super().display()
+        print("Role:", self.role)
+a = admin("Super Admin", "admin_user", "kgmd@gmail.com")
+a.display()

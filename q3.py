@@ -1,22 +1,16 @@
-class engine:
-    def start(self):
-        print("Engine started")
-    def stop(self):
-        print("Engine stopped")
-class electric_system:
-    def start(self):
-        print("Electric system started")
-    def stop(self):
-        print("Electric system stopped")
-
-class hybrid_car(engine, electric_system):
-    def start(self):
-        engine.start(self)
-        electric_system.start(self)
-    def stop(self):
-        engine.stop(self)
-        electric_system.stop(self)
-
-hybrid = hybrid_car()
-hybrid.start()
-hybrid.stop()
+class employee:
+    def __int__(self, emp_id, salary):
+        self.emp_id = emp_id
+        self.salary = salary
+    def display(self):
+        print("Employee ID:", self.emp_id)
+        print("Salary:", self.salary)
+class manager(employee):
+    def __init__(self, department, emp_id, salary):
+        super().__init__(emp_id, salary)
+        self.department = department
+    def display(self):
+        super().display()
+        print("Department:", self.department)
+manager = manager("Sales", 101, 50000)
+manager.display()
