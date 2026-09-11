@@ -1,11 +1,14 @@
-def conve(m):
-    try:
-        new_value = int(m)
-    except:
-        print("Enter any numerical value")
-    else:
-        print(f"The final value is: {new_value}")
-    finally:
-        print("The value is converted")  
+class teacher():
+    def teach(self):
+        print("I am a teacher")
 
-print(conve(45.78))
+class researcher():
+    def research(self):
+        print("I am a researcher")
+
+class professor(teacher, researcher):
+    def all_skills(self):
+        self.teach()
+        self.research()
+p = professor()
+p.all_skills()
