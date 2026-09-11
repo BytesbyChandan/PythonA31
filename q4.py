@@ -1,11 +1,12 @@
-def floo(x,y):
-    try:
-        div_value = x//y
-    except ZeroDivisionError:
-        print("Do not use zero")
-    else:
-        print(f"The final value is:{div_value}")
-    finally:
-        print("Floor Division Done.....!!!")
-
-floo(5534546,34)
+class writer:
+    def write():
+        print("Writing to file...")
+class speaker:
+    def speak():
+        print("Speaking...")
+class author(writer, speaker):
+    def all_method_call(self):
+        writer.write()
+        speaker.speak()
+au = author()
+au.all_method_call()

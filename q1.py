@@ -1,11 +1,20 @@
-def div(x,y):
-    try:
-        division = x/y
-    except TypeError:
-        print("y should by non zero")
-    else:
-        print(f"The division is:{division}")
-    finally:
-        print('The solutiion done')
+class father:
+    def skill_father(self):
+        print(f"Father's skill is gardening")
 
-div(4,2)
+class mother:
+    def skill_mother(self):
+        print(f"Mother's skill is cooking")
+
+class son(father, mother):
+    def skill_son(self):
+        self.skill_father()
+        self.skill_mother()
+
+son1 = son()
+son1.skill_son()
+
+
+
+
+            

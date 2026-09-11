@@ -1,11 +1,20 @@
-def multi(x,y):
-    try:
-        mul_solution = int(x)*int(y)
-    except TypeError:
-        print("Do not use zero value")
-    else:
-        print(f"The value is:{mul_solution}")
-    finally:
-        print("u ve got final solution")
+class calculator1:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    def add(self):
+        return self.a + self.b
+class calculator2:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    def multiply(self):
+        return self.a * self.b
+class hybrid_calculator(calculator1, calculator2):
+    def __init__(self, a, b):
+        calculator1.__init__(self, a, b)
+        calculator2.__init__(self, a, b)
 
-multi(23.45,67.89)
+hy = hybrid_calculator(5, 10)
+print("Addition:", hy.add())
+print("Multiplication:", hy.multiply())
