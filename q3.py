@@ -1,5 +1,7 @@
-nums = [10, 20, 30, 40, 50, 60]
-nums.remove(30)
-nums.pop()
-nums.pop(0)
-print(nums)
+# Find the sum of all elements in a matrix.
+list = [[1,2,3],[4,5,6],[7,8,9]]
+total = 0
+for row in list:
+    for element in row:
+        total += element
+print("Sum of all elements:", total)

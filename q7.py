@@ -1,6 +1,6 @@
-nums = [5, 8, 2, 10, 15, 7]
-# count the element without using len() function
-count = 0
-for i in nums:
-    count += 1
-print(count)
+#Add two matrices.
+list1 = [[1,2,3],[4,5,6],[7,8,9]]
+list2 = [[10,11,12],[13,14,15],[16,17,18]]
+result = [[list1[i][j] + list2[i][j] for j in range(len(list1[0]))] for i in range(len(list1))]
+for row in result:
+    print(row)

@@ -1,12 +1,12 @@
-class shape:
-    def __init__(self, color):
-        self.color = color
-class circle(shape):
-    def __init__(self, radius, color):
-        super().__init__(color)
-        self.radius = radius
-    def area(self):
-        return 3.14 * self.radius * self.radius
-c = circle(5, "red")
-print("Color:", c.color)
-print("Area:", c.area())
+#Count how many even and odd numbers are in the matrix.
+list = [[1,2,3],[4,5,6],[7,8,9]]
+even_count = 0  
+odd_count = 0          
+for row in list:
+    for element in row:
+        if element % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+print("Even numbers:", even_count)
+print("Odd numbers:", odd_count)

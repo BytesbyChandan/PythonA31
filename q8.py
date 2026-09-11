@@ -1,5 +1,4 @@
-nums = [10, 20, 30, 40, 50]
-sum = 0
-for i in nums:      
-    sum += i    
-print(sum)
+#Find the sum of each row only.
+list = [[1,2,3],[4,5,6],[7,8,9]]
+for row in list:
+    print("Sum of row:", sum(row))
